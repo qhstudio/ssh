@@ -103,6 +103,9 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		return SUCCESS;
 	}
 	
+	/**
+	 * 后端验证
+	 */
 	public void validateDoSubmit() {
 		if(null == model.getUserName() || "".equals(model.getUserName().trim())){
 			addFieldError("userName", getText("userNameNull"));

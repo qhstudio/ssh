@@ -10,7 +10,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
-import org.springframework.data.domain.Sort.Order;
 
 import com.yyf.dao.UserDao;
 import com.yyf.model.User;
@@ -40,6 +39,15 @@ public class UserDaoTest {
 		Pageable pageable = new PageRequest(0, 5, new Sort(
                 Direction.DESC, "userId"));
 		Page<User> page = userDao.findAll(pageable);
+		System.out.println(page.getContent());
+//		System.out.println(page.getContent());
+	}
+	
+	@Test
+	public void testQuery() {
+		Pageable pageable = new PageRequest(0, 5, new Sort(
+                Direction.DESC, "userId"));
+		Page<User> page = userDao.findUsersByRoleId(5l, pageable);
 		System.out.println(page.getContent());
 //		System.out.println(page.getContent());
 	}

@@ -121,7 +121,7 @@
 			<version>1.2</version>
 		</dependency>
 
-
+<!-- 如何引入本地jar包 -->
 		<dependency>
 			<groupId>ueditor</groupId>
 			<artifactId>ueditor</artifactId>
@@ -165,11 +165,13 @@
 				</configuration>
 			</plugin>
 
+			<!-- tomcat的使用 tomcat run -->
 			<!-- <plugin> <groupId>org.apache.tomcat.maven</groupId> <artifactId>tomcat7-maven-plugin</artifactId> 
 				<version>2.2</version> <configuration> <path>/</path> <port>8080</port> </configuration> 
 				</plugin> -->
 
 			<!-- -->
+			<!-- 采用jetty服务器，监听2秒一次。在package的时候启动 -->
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>maven-jetty-plugin</artifactId>
